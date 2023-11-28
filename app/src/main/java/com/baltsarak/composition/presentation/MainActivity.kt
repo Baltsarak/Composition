@@ -1,7 +1,7 @@
 package com.baltsarak.composition.presentation
 
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import androidx.appcompat.app.AppCompatActivity
 import com.baltsarak.composition.R
 
 class MainActivity : AppCompatActivity() {
