@@ -13,7 +13,7 @@
         android:layout_margin="16dp"
         android:text="@string/choose_level"
         android:textSize="24sp"
-        android:textStyle="bold"/>
+        android:textStyle="bold" />
 
     <Button
         android:id="@+id/button_level_test"
@@ -21,7 +21,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
-        android:text="@string/test"/>
+        android:text="@string/test" />
 
     <Button
         android:id="@+id/button_level_easy"
@@ -30,7 +30,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/holo_green_light"
-        android:text="@string/easy"/>
+        android:text="@string/easy" />
 
     <Button
         android:id="@+id/button_level_normal"
@@ -39,7 +39,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/holo_orange_light"
-        android:text="@string/normal"/>
+        android:text="@string/normal" />
 
     <Button
         android:id="@+id/button_level_hard"
@@ -48,7 +48,7 @@
         android:layout_marginStart="16dp"
         android:layout_marginEnd="16dp"
         android:backgroundTint="@android:color/holo_red_light"
-        android:text="@string/hard"/>
+        android:text="@string/hard" />
 
     <ImageView
         android:id="@+id/iv_logo_choose"
