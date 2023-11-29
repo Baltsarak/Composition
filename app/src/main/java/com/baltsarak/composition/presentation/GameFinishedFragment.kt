@@ -7,6 +7,7 @@ import android.view.ViewGroup
 import androidx.activity.OnBackPressedCallback
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
+import com.baltsarak.composition.R
 import com.baltsarak.composition.databinding.FragmentGameFinishedBinding
 import com.baltsarak.composition.domain.entity.GameResult
 
@@ -33,6 +34,11 @@ class GameFinishedFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        setupClickListeners()
+        settingValues()
+    }
+
+    private fun setupClickListeners() {
         val callback = object : OnBackPressedCallback(true) {
             override fun handleOnBackPressed() {
                 retryGame()
@@ -47,6 +53,42 @@ class GameFinishedFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+    }
+
+    private fun settingValues() {
+        with(binding) {
+            resultLogo.setImageResource(getLogoResId())
+            tvRequiredAnswers.text = String.format(
+                getString(R.string.required_answers),
+                gameResult.gameSettings.minCountOfRightAnswers
+            )
+            tvScoreAnswers.text =
+                String.format(getString(R.string.your_result), gameResult.countOfRightAnswers)
+            tvRequiredPercentage.text = String.format(
+                getString(R.string.required_percentage),
+                gameResult.gameSettings.minPercentOfRightAnswers
+            )
+            tvScorePercentage.text = String.format(
+                getString(R.string.percentage_right_answers),
+                getPercentOfRightAnswers()
+            )
+        }
+    }
+
+    private fun getLogoResId(): Int {
+        return if (gameResult.winner) {
+            R.drawable.win_brain
+        } else {
+            R.drawable.los_brain
+        }
+    }
+
+    private fun getPercentOfRightAnswers() = with(gameResult) {
+        if (countOfRightAnswers == 0) {
+            0
+        } else {
+            ((countOfRightAnswers / countOfQuestion.toDouble()) * 100).toInt()
+        }
     }
 
     private fun parseArg() {
