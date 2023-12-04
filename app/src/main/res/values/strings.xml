@@ -1,9 +1,9 @@
 <resources>
-    <string name="app_name">Composition</string>
+    <string name="app_name">Brain Trainer</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="welcome_title">Найди слагаемое</string>
-    <string name="welcome_description">Перед вами будет пример сложения, с одной неизвестной переменной. Из шести предложенных снизу вариантов необходимо определить и выбрать подходящее число, что бы пример решался правильно.</string>
+    <string name="welcome_description">Перед вами будет пример сложения, с одним неизвестным слогаемым.\n\ \n\Сверху, в круге, результат сложения.\n\ \n\А снизу шесть вариантов из которых необходимо выбрать подходящее число, что бы пример решался правильно.\n\ \n\За отведенное время нужно дать как можно больше верных ответов и как можно меньше ошибочных.</string>
     <string name="welcome_button">Понятно</string>
     <string name="welcome_logo">Welcome logo</string>
     <string name="choose_logo">Choose logo</string>
